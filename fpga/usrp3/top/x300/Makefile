@@ -21,6 +21,7 @@
 
 CREATE_LVBITX=python ../../lib/io_port2/create-lvbitx.py
 
+WX_DEFS=BUILD_WR=1 BUILD_1G=1 SFP0_WR=1 SFP_1GBE=1 $(OPTIONS)
 GIGE_DEFS=BUILD_1G=1 SFP0_1GBE=1 SFP1_1GBE=1 $(OPTIONS)
 HG_DEFS=BUILD_1G=1 BUILD_10G=1 SFP0_1GBE=1 SFP1_10GBE=1 $(OPTIONS)
 XG_DEFS=BUILD_10G=1 SFP0_10GBE=1 SFP1_10GBE=1 $(OPTIONS)
@@ -128,6 +129,10 @@ X310_XA: X310_IP
 X300_XA: X300_IP
 	$(call vivado_build,X300,$(XA_DEFS) X300=1)
 	$(call post_build,X300,XA)
+
+X310_WX: X310_IP
+	$(call vivado_build,X310,$(WX_DEFS) X310=1)
+	$(call post_build,X310,WX)
 
 clean:    ##Clean up all target build outputs.
 	@echo "Cleaning targets..."

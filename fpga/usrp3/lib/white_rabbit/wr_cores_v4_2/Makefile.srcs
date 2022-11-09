@@ -10,6 +10,11 @@ platform/xilinx/wr_gtp_phy/family7-gtx/whiterabbit_gtxe2_channel_wrapper_gt.vhd 
 platform/xilinx/wr_gtp_phy/spartan6/gtp_phase_align.vhd \
 platform/xilinx/wr_gtp_phy/gtp_bitslide.vhd \
 platform/xilinx/wr_gtp_phy/spartan6/whiterabbitgtp_wrapper_tile_spartan6.vhd \
+platform/xilinx/wr_gtp_phy/kintex7/gtwizard_0_common.vhd \
+platform/xilinx/wr_gtp_phy/kintex7-lp/gtx_comma_detect_lp.vhd \
+platform/xilinx/wr_gtp_phy/kintex7-lp/gtxe2_lp.vhd \
+platform/xilinx/wr_gtp_phy/kintex7-lp/wr_gtx_phy_kintex7_lp_qpll.vhd \
+platform/xilinx/wr_gtp_phy/kintex7-lp/wr_gtx_phy_kintex7_lp.vhd \
 ip_cores/general-cores/modules/common/gc_reset.vhd \
 ip_cores/general-cores/modules/genrams/genram_pkg.vhd \
 ip_cores/general-cores/modules/wishbone/wishbone_pkg.vhd \

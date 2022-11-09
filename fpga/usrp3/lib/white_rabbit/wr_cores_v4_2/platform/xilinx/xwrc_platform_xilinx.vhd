@@ -55,7 +55,7 @@ entity xwrc_platform_xilinx is
     (
       -- Define the family/model of Xilinx FPGA
       -- (supported: for now only spartan6)
-      g_fpga_family               : string  := "spartan6";
+      g_fpga_family               : string  := "kintex7";
       -- Select whether to include external ref clock input
       g_with_external_clock_input : boolean := FALSE;
       -- Set to FALSE if you want to instantiate your own PLLs

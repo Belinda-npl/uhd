@@ -34,6 +34,7 @@ include $(LIB_DIR)/xge_interface/Makefile.srcs
 include $(LIB_DIR)/dsp/Makefile.srcs
 include $(LIB_DIR)/io_port2/Makefile.srcs
 include $(LIB_DIR)/axi/Makefile.srcs
+include $(LIB_DIR)/white_rabbit/wr_cores_v4_2/Makefile.srcs
 include $(LIB_DIR)/io_cap_gen/Makefile.srcs
 include $(LIB_DIR)/rfnoc/Makefile.srcs
 # For sake of convenience, we include the Makefile.srcs for DRAM FIFO, DDC, and
@@ -72,6 +73,14 @@ x300.xdc \
 timing.xdc \
 $(IMAGE_CORE)
 
+ifdef BUILD_WR
+SFP_SERDES_SRCS += $(abspath x3xx_wr.xdc)
+TOP_SRCS += \
+x3xx_wr_top.vhd \
+x3xx_serial_dac.vhd \
+n3xx_serial_dac_arb.vhd
+endif
+
 ifdef BUILD_10G
 SFP_SERDES_SRCS += $(XGE_SRCS) $(XGE_INTERFACE_SRCS) $(abspath x300_10ge.xdc) $(TEN_GIGE_PHY_SRCS) $(IP_TEN_GIGE_PHY_XCI_SRCS)
 endif
@@ -107,6 +116,7 @@ $(SFP_SERDES_SRCS) $(IOPORT2_SRCS) \
 $(PACKET_PROC_SRCS) $(DSP_SRCS) $(DRAM_SRCS) \
 $(AXI_SRCS) $(CAP_GEN_GENERIC_SRCS) $(IP_XCI_SRCS) $(BD_SRCS) \
 $(RFNOC_SRCS) $(LIB_IP_XCI_SRCS) \
+$(WHITE_RABBIT_SRCS) \
 $(RFNOC_FRAMEWORK_SRCS) \
 $(RFNOC_BLOCK_DUC_SRCS) $(RFNOC_BLOCK_DDC_SRCS) $(RFNOC_BLOCK_RADIO_SRCS) \
 $(RFNOC_BLOCK_AXI_RAM_FIFO_SRCS) \

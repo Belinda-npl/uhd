@@ -40,7 +40,7 @@ package wr_xilinx_pkg is
 
   component xwrc_platform_xilinx is
     generic (
-      g_fpga_family               : string  := "spartan6";
+      g_fpga_family               : string  := "kintex7";
       g_with_external_clock_input : boolean := FALSE;
       g_use_default_plls          : boolean := TRUE;
       g_gtp_enable_ch0            : integer := 0;
